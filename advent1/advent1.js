@@ -34,7 +34,11 @@
 
 // How many measurements are larger than the previous measurement?
 
-let array = Array.from(Array(20)).map(function(x, i){return x = Math.floor(Math.random() * 101)+ 199});
+// let array = Array.from(Array(20)).map(function(x, i){return x = Math.floor(Math.random() * 101)+ 199});
+
+const {inputSplit} = require('./input.js');
+
+// let array = input;
 
 sort = (arr) => {
     count = 0;
@@ -51,6 +55,6 @@ sort = (arr) => {
     console.log(`There are ${count} measurements that are larger than the previous measurement`);
 }
 
-console.log(array);
+// console.log(inputSplit);
 
-sort(array);
+sort(inputSplit);
