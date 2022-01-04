@@ -36,9 +36,10 @@
 
 // let array = Array.from(Array(20)).map(function(x, i){return x = Math.floor(Math.random() * 101)+ 199});
 
-const {inputSplit} = require('./input.js');
 
-// let array = input;
+//PART 1
+
+const {inputSplit} = require('./input.js');
 
 sort = (arr) => {
     count = 0;
@@ -57,4 +58,25 @@ sort = (arr) => {
 
 // console.log(inputSplit);
 
-sort(inputSplit);
+// sort(inputSplit);
+
+//PART 2
+
+compareSum = (arr) => {
+    sum1 = 0;
+    sum2 = 0;
+    larger = 0;
+    // console.log(arr.length);
+    for(let i = 0; i < arr.length; i++){
+        sum1 = arr[i] + arr[i + 1] + arr[i + 2];
+        sum2 = arr[i + 1] + arr[i + 2] + arr[i + 3];
+        if(sum1 < sum2){
+            larger++;
+            sum1 === 0;
+            sum2 === 0;
+        }
+    }
+    console.log(`Increased count is ${larger}`);
+}
+
+compareSum(inputSplit);
