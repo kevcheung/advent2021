@@ -27,15 +27,20 @@
 
 // Calculate the horizontal position and depth you would have after following the planned course. What do you get if you multiply your final horizontal position by your final depth?
 
+//PART 1
+
 const {inputSplit} = require('./input.js');
 
-depth = (array) => {
+sub = (array) => {
     let x = 0;
     let y = 0;
+    let z = 0;
+    let depth = 0
 
     let mvmtArr = array.map((mvmt) => mvmt[0]);
     let numArr = array.map((num) => parseInt(num[1]));
     // console.log(mvmtArr);
+    // console.log(depth)
     for(let i = 0; i < array.length; i++){
         if(mvmtArr[i] === 'forward'){
             x = x + numArr[i]
@@ -45,10 +50,34 @@ depth = (array) => {
             y = y + numArr[i]
         }
     }
-    console.log(`x is ${x} and y is ${y}`);
-    console.log("Final depth is ", x * y);
+    depth = x * y
 }
 
-depth(inputSplit);
+sub(inputSplit);
 
-// console.log(inputSplit);
+//PART 2
+
+withAim = (array) => {
+    let x = 0;
+    let y = 0;
+    let z = 0;
+    let depth = 0
+
+    let mvmtArr = array.map((mvmt) => mvmt[0]);
+    let numArr = array.map((num) => parseInt(num[1]));
+    
+    for(let i = 0; i < array.length; i++){
+        if(mvmtArr[i] === 'forward'){
+            x = x + numArr[i]
+            y = y + (z * numArr[i])
+        }else if(mvmtArr[i] === 'up'){
+            z = z - numArr[i]
+        }else if(mvmtArr[i] === 'down'){
+            z = z + numArr[i]
+        }
+    }
+    depth = x * y
+    console.log(depth)
+}
+
+withAim(inputSplit);

@@ -79,4 +79,4 @@ compareSum = (arr) => {
     console.log(`Increased count is ${larger}`);
 }
 
-compareSum(inputSplit);
+// compareSum(inputSplit);
