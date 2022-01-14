@@ -4,7 +4,7 @@ const inputSplit = inputText
                         .split(/\r|\n|\r\n/)
                         .map((value) => parseInt(value));
 
-console.log(inputSplit);
+// console.log(inputSplit);
 
 module.exports = {
     inputSplit
